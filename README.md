@@ -119,13 +119,13 @@ Last Host           : 192.168.1.254
 
 ```
 maskerade/
-├── .venv/                 # Virtual environment (auto-generated)
+├── .venv/                # Virtual environment (auto-generated)
 ├── main.py               # Application entry point
 ├── network_calculator.py # Core network calculation logic
 ├── file_exporter.py      # CSV export functionality
 ├── menu_interface.py     # Interactive user interface
 ├── requirements.txt      # Python dependencies
-└── README.md            # This file
+└── README.md             # This file
 ```
 
 ## Module Overview
