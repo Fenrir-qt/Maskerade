@@ -190,11 +190,13 @@ class NetworkCalculator:
             
             subnet_data = {
                 "Subnet": [str(subnet) for subnet in subnets],
-                "Network Address": [str(subnet.network_address) for subnet in subnets],
-                "Broadcast Address": [str(subnet.broadcast_address) for subnet in subnets],
                 "Usable Hosts": [subnet.num_addresses - 2 if subnet.num_addresses > 2 else 0 for subnet in subnets],
+                "Network Address": [str(subnet.network_address) for subnet in subnets],
                 "First Host": [str(next(subnet.hosts())) if list(subnet.hosts()) else "N/A" for subnet in subnets],
-                "Last Host": [str(list(subnet.hosts())[-1]) if list(subnet.hosts()) else "N/A" for subnet in subnets]
+                "Last Host": [str(list(subnet.hosts())[-1]) if list(subnet.hosts()) else "N/A" for subnet in subnets],
+                "Broadcast Address": [str(subnet.broadcast_address) for subnet in subnets],
+                "Subnet Mask": [str(subnet.netmask) for subnet in subnets],
+                "Subnet Mask (Decimal)": [int(subnet.netmask) for subnet in subnets],
             }
             
             df = pd.DataFrame(subnet_data)
